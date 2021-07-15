@@ -1,0 +1,27 @@
+<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+  <label for="phoneNumber" style="margin-top: 40px;">Phone Number</label><br>
+  <app-phonenumber></app-phonenumber>
+  <!--
+    
+    <input type="text" #phoneNumber="ngModel" [(ngModel)]="userService.selectedUser.phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number"><br>
+    <input type="text" #country="ngModel" [(ngModel)]="userService.selectedUser.country" name="country" placeholder="Country">
+    <input type="text" #countryCode="ngModel" [(ngModel)]="userService.selectedUser.countryCode" name="countryCode" placeholder="countryCode"> 
+  -->
+  <label for="address">Address</label><br>
+  <input type="text" #address="ngModel" [(ngModel)]="userService.selectedUser.address" name="address" placeholder="Enter your Address"><br>
+  <label for="nameOrg">Name</label><br>
+  <input type="text" #nameOrg="ngModel" [(ngModel)]="userService.selectedUser.nameOrg" name="nameOrg" placeholder="Enter the Name of the Organisation">
+  <input type="submit" value="Save & Continue" style="margin-top: 30px;">
+</form>
+
+<p id="safteyMess" style="font-size: 15px; margin-top: 5px;">Your data is protected</p>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>
