@@ -1,4 +1,4 @@
-Profile Page for a website.
+Profile Page for a website. Part of a website project using MEAN stack at PS at Cateina Technologies in june 2021.
 
 # Angular6
 
